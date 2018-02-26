@@ -4,3 +4,6 @@ Do ls -lart on your home directory, to identify the start-up script your shell i
 Once you have identified the start up script, add the following line in your script - export set PATH=$PATH:~/myscript.
 Once added, source your start-up script or log out and log back in.
 Execute your script using script name.
+
+
+hej hej
