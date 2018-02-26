@@ -6,4 +6,19 @@ Once added, source your start-up script or log out and log back in.
 Execute your script using script name.
 
 
-hej hej
+#entry 23/2
+Searching for articles on specifically SVMs. Binary or multiple classifyer? 
+
+#entry 24/2
+Send all papers to Arne + project plan. 
+
+#entry 25/2
+Start making presentation for paper. Two binary SVMs after each other. Separates 4 states. Should I do the same? 
+
+#entry 26/2
+Starting with the parser. Input file, separate the name, sequence, feature. Make the sliding windows for the sequence.
+How is the sequence input to the SVM supposed to look? Matrix where each sequence is a row, each window is an element of that row?
+Or is each window a row and each matrix a sequence? 
+If I want two binary classifyers after each other, do I need to change G, I, O to all be "not membrane helix" in the first classifyer?
+How do I input additional features? Hydrophobicity etc? 
+
