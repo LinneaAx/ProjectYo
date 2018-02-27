@@ -1,3 +1,6 @@
+from sklearn import svm
+import numpy as np
+
 #######################################################################
 # Open file and split into lists
 #######################################################################
@@ -60,7 +63,8 @@ aa_dic = {  'A':[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 			'W':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], 
 			'Y':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
 			'0':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]} 
-
+			
+print(topology)
 
 for elements in windowz:
     temp = []
@@ -70,13 +74,40 @@ for elements in windowz:
     temp = [characters for elements in temp for characters in elements]
     binary_word.append(temp)
 
-print(binary_word)
+######################################################################
+# Map labels to numbers
+######################################################################
+
+binary_label = []
+top_binary_dic = { 'G':1, 'M':2, 'I':3, 'O':4 }
+
+for top in topology:
+    print(topology)
+    labelz = [top_binary_dic[letter] for letter in top] 
+    binary_label.extend(labelz)
+
+print(binary_label)
 
 
+######################################################################
+# Train SVM 
+######################################################################
 
 
+top_top_dic = { 1:'G', 2:'M', 3:'I', 4:'O' }
 
 
+def coder(sequence, dictionary):
+    new_name = []
+    print(sequence)
+    for elements in sequence:
+        newname = [dictionary[elements]
+        new_name.extend(newname)
+    return(new_name)
+
+
+result = coder(binary_label, top_top_dic)    
+print(result)
 
 
 
