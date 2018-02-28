@@ -12,8 +12,6 @@ file_input = filehandle.read().splitlines()
 proteinname = [file_input[i] for i in range(0, len(file_input), 3)]
 proteinseq = [file_input[i] for i in range(1, len(file_input), 3)]
 topology = [file_input[i] for i in range(2, len(file_input), 3)]
-#print(proteinname)
-#print(proteinseq)
 
 #######################################################################
 # Select window size, for an odd number windowsize ! Do I need to add exception?  
@@ -29,7 +27,6 @@ n = int(ws/2)
 windowz = []
 for protseq in proteinseq:
     protseq = ((n)*'0')+protseq+((n)*'0')
-    #print(protseq)
     for i in range(0, len(protseq)):
         if i+(ws) > len(protseq):
             break
@@ -97,17 +94,17 @@ print(binary_label)
 top_top_dic = { 1:'G', 2:'M', 3:'I', 4:'O' }
 
 
-def coder(sequence, dictionary):
-    new_name = []
-    print(sequence)
-    for elements in sequence:
-        newname = [dictionary[elements]
-        new_name.extend(newname)
-    return(new_name)
+#def coder(sequence, dictionary):
+#    new_name = []
+#    print(sequence)
+#    for elements in sequence:
+#        newname = [dictionary[elements]
+#        new_name.extend(newname)
+#    return(new_name)
 
 
-result = coder(binary_label, top_top_dic)    
-print(result)
+#result = coder(binary_label, top_top_dic)    
+#print(result)
 
 
 
