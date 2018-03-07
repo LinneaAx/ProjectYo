@@ -3,7 +3,7 @@ import sys
 import os
 import numpy as np
 
-BASE_PATH = "./Data/test/"
+BASE_PATH = "./"
 
 top_dic = { 'G':1, 'M':2, 'I':3, 'O':4 }
 

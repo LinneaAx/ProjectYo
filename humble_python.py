@@ -16,7 +16,7 @@ def create_those_windows(input_data):
         clf = LinearSVC()
         clf.fit(X, Y)
         
-        cross_score = cross_val_score(clf, X, Y, cv = 10, verbose=True)
+        cross_score = cross_val_score(clf, X, Y, cv = 10, verbose=True, n_jobs=-1)
         #params = clf.get_params() #prints out the parameters the model builds on, useful later?
         cross_score_average = np.average(cross_score)
     

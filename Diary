@@ -22,3 +22,21 @@ Or is each window a row and each matrix a sequence?
 If I want two binary classifyers after each other, do I need to change G, I, O to all be "not membrane helix" in the first classifyer?
 How do I input additional features? Hydrophobicity etc? 
 
+#entry 27/2 working with the right input format for the SVM. 
+decided to not focus on making the perfect SVM, focus on the project handling
+
+#entry 28/2 The modular nice script is not ready for the friday deadline.
+Put everything in the same file for training and predicting. It takes a single sequence for prediction. 
+Present and evaluate group presentations. Got good feedback on what to change.
+Looking into shebangs and chmod -x, want to make all my scripts executable. 
+
+#entry 1/3 Preparing for the presentation between skiing and relaxing. 
+
+#entry 5/3 Rewriting a lot to make the scripts work together.
+Will start by making a python script for running several functions together. Is it a good idea to create the binary input files and save them?  
+
+#entry 6/3 wrote a script to split out all the membrane proteins and an equal number of globular proteins. total around 600 proteins. 
+running 3 residue window training for 600 proteins takes around 3 minutes. 
+Started a run of testing windowsizes between 3 and 33 for the protein split dataset. 
+
+#entry 7/3 The run worked, yay, however I want to try bigger windowsizes as the cross_val_score did not reach a maxima. 
