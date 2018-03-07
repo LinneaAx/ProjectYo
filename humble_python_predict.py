@@ -15,7 +15,7 @@ def input_predict(input_file, model):
     fasta = list(file_handle)
     id_seq = fasta[0]
     
-    binary_word = parse_code.aa_top_coder(input_file)[0]
+    binary_word = parse_code.aa_top_coder(input_file)[1]
     print(binary_word)
     clf = joblib.load(model)
     pred_result = []
