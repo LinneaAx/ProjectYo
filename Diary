@@ -40,3 +40,5 @@ running 3 residue window training for 600 proteins takes around 3 minutes.
 Started a run of testing windowsizes between 3 and 33 for the protein split dataset. 
 
 #entry 7/3 The run worked, yay, however I want to try bigger windowsizes as the cross_val_score did not reach a maxima. 
+Having problems using ssh with the computers, scripts get terminated etc. Try to run over night. 
+Reoganized my files, remember to add new file directories in the humble files. 
