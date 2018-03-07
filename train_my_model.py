@@ -13,21 +13,21 @@ def train_model(input_file):
     y = filz['y']
 
     clf = LinearSVC()
-    #clf.fit(x, y)
+    clf.fit(x, y)
     
     cross_score = cross_val_score(clf, x, y, cv = 10, verbose=True)
-    #clf.get_params() #prints out the parameters the model builds on, useful later?    
+    #params = clf.get_params() #prints out the parameters the model builds on, useful later?    
     cross_score_average = np.average(cross_score)
     
-    
-    print(cross_score)
-    file_handle = open('val_output.txt', 'w')
-    file_handle.write(input_file, cross_score_average) # why doesnt this work??
-    
     joblib.dump(clf,input_file+'.model.pkl')
+    file_handle = open('val_output.txt', 'w')
+    file_handle.write(input_file) # why doesnt this work??
+    file_handle.write(str(params))
+    file_handle.write(str(cross_score_average))
+    file_handle.write('\n')
     
 if __name__ == '__main__':
-    train_model('output.txt.npz')
+    train_model('ws_3_alpha_beta_globular_sp_4state.txt_split_output.txt.npz')
     
 
 

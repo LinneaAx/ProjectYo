@@ -1,6 +1,6 @@
 #bash script for parsing, training and optimizing for different window sizes 
 
-Take in input 3 line file sys arg1 
+
 
 if __name__ = '__main__':
 

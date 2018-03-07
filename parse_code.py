@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
-import sys 
+import sys
+import os
 import numpy as np
+
+BASE_PATH = "./Data/test/"
 
 top_dic = { 'G':1, 'M':2, 'I':3, 'O':4 }
 
@@ -56,7 +59,7 @@ def window(file_input, windowsize):
             windowz.append(temp)
     return(windowz)
     
-def aa_top_coder(file_input, windowsize, dicaa, dictop):
+def aa_top_coder(file_input, windowsize, dicaa=aa_dic, dictop=top_dic):
     
     binary_word = []
     windows = window(file_input, windowsize)
@@ -67,21 +70,29 @@ def aa_top_coder(file_input, windowsize, dicaa, dictop):
             temp.append(binary)
         temp = [characters for elements in temp for characters in elements]
         binary_word.append(temp)
+    binary_word = np.array(binary_word)
         
     coded_label = []
     topology = parsetop(file_input)
     for top in topology:
         labelz = [dictop[letter] for letter in top] 
         coded_label.extend(labelz)   
+    coded_label = np.array(coded_label)
     
+    outfile ='ws_'+str(windowsize)+'_'+file_input+'_output.txt'
+    np.savez( os.path.join(BASE_PATH, outfile), x=binary_word, y=coded_label)
+    print('coding done')
+    return(binary_word, coded_label)
     
-    outfile = 'output.txt'
-    np.savez(outfile, x=binary_word, y=coded_label)
     
 if __name__ == '__main__':
 
-    aa_top_coder('alpha_beta_globular_sp_4state_mini.txt', '3', aa_dic, top_dic)
+    aa_top_coder('alpha_beta_globular_sp_4state.txt_split', '3', aa_dic, top_dic)
+    #input_file = sys.argv[1]
     
+    #if len(sys.argv) > 2:
+    #kernel = sys.argv[2]
+    #somethingelse = sys.argv[3]
   
     
     
