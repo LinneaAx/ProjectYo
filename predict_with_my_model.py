@@ -13,4 +13,4 @@ def predict_with_model(input_file, model):
     pred_result = clf.predict(x,y)
     
 if __name__ == '__main__':
-    predict_with_model('output.txt.npz.model.pkl')
+    predict_with_model(input_file, model)

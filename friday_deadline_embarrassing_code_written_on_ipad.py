@@ -63,7 +63,7 @@ aa_dic = {  'A':[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 'W':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], 
 'Y':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
 '0':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]} 
-print(topology)
+
 
 for elements in windowz:
     temp = []
@@ -81,7 +81,6 @@ binary_label = []
 top_binary_dic = { 'G':1, 'M':2, 'I':3, 'O':4 }
 
 for top in topology:
-    print(topology)
     labelz = [top_binary_dic[letter] for letter in top] 
     binary_label.extend(labelz)
 
@@ -109,49 +108,27 @@ clf.fit(x, y)
 sequence = 'ASSTYRGT'
 
 predict_window = []
-for protseq in sequence:
-    protseq = ((n)*'0')+protseq+((n)*'0')
-    for i in range(0, len(protseq)):
-        if i+(ws) > len(protseq):
-            break
-        temp = protseq[i:i+(ws)]
-        predict_window.append(temp)
 
-binary_word = []
-aa_dic = {  'A':[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
-'C':[0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-'D':[0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
-'E':[0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
-'F':[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
-'G':[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
-'H':[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0], 
-'I':[0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0], 
-'K':[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0], 
-'L':[0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0], 
-'M':[0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0], 
-'N':[0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0],
- 
-'Q':[0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],
-'P':[0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0], 
-'R':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0], 
-'S':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0], 
-'T':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0], 
-'V':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0], 
-'W':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], 
-'Y':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-'0':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]} 
+protseq = ((n)*'0')+protseq+((n)*'0')
+for i in range(0, len(protseq)):
+    if i+(ws) > len(protseq):
+        break
+    temp = protseq[i:i+(ws)]
+    predict_window.append(temp)
+print(predict_window)
 
 for elements in predict_window:
     temp = []
     for characters in elements:
         binary = aa_dic[characters]
-        temp.append(binary)
+        temp.extend(binary)
     temp = [characters for elements in temp for characters in elements]
     binary_word.append(temp)
-z =np.array(binary_word)
 
-result = clf.predict(z)
-
+z = np.array(binary_word)
+print(z)
+resultat = clf.predict(z)
+print(resultat)
 top_top_dic = { 1:'G', 2:'M', 3:'I', 4:'O' }
 
 pred_topology = []

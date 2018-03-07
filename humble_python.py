@@ -10,8 +10,8 @@ from sklearn.model_selection import cross_val_score
 
 
 def create_those_windows(input_data):
-    file_handle = open('3_33_val_output.txt', 'w')
-    for windowsize in range(3, 34, 2):
+    file_handle = open('41_49_val_output.txt', 'w')
+    for windowsize in range(41, 50, 2):
         X, Y = parse_code.aa_top_coder(input_data, windowsize) #files saved in test
         clf = LinearSVC()
         clf.fit(X, Y)
