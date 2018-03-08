@@ -22,5 +22,16 @@ def input_predict(input_file, model):
     pred_result = clf.predict(binary_word)
     print(pred_result)
     
+top_top_dic = { 1:'G', 2:'M', 3:'I', 4:'O' }
+
+
+def coder(sequence, dictionary):
+    new_name = []
+    print(sequence)
+    for elements in sequence:
+        newname = [dictionary[elements]
+        new_name.extend(newname)
+    return(new_name)
+
     
     
