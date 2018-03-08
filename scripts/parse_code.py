@@ -3,7 +3,7 @@ import sys
 import os
 import numpy as np
 
-BASE_PATH = "./splitoutput/"
+BASE_PATH = "../splitoutput/"
 
 top_dic = { 'G':1, 'M':2, 'I':3, 'O':4 }
 
@@ -83,6 +83,15 @@ def aa_top_coder(file_input, windowsize, dicaa=aa_dic, dictop=top_dic):
     np.savez( os.path.join(BASE_PATH, outfile), x=binary_word, y=coded_label)
     print('coding done')
     return(binary_word, coded_label)
+
+top_top_dic = { 1:'G', 2:'M', 3:'I', 4:'O' }
+
+def decoder(sequence, dictionary=top_top_dic):
+    new_name = []
+    for elements in sequence:
+        newname = [dictionary[elements]]
+        new_name.extend(newname)
+    return(new_name)
     
     
 if __name__ == '__main__':
