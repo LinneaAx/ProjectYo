@@ -16,10 +16,11 @@ from sklearn.model_selection import cross_val_score
 def input_predict(input_file, model):
     file_handle = open(input_file, 'r')
     fasta = list(file_handle)
-    id_seq = fasta[0]
-    seq = fasta[1]
+    id_seq = fasta[0] #improve list comprehension, adding all even lines. 
+    seq = fasta[1] #adding all uneven lines. 
     
-    binary_word = parse_code.aa_top_coder(seq)
+    #for i in id_seq:
+    binary_word = parse_code.aa_top_coder(seq) #seq[i]
     print(binary_word)
     clf = joblib.load(model)
     pred_result = []
@@ -30,11 +31,11 @@ def input_predict(input_file, model):
     print(decoded)
     
     file_handle_out = open('prediction_result_from'+input_file, 'w')
-    file_handle_out.write(id_seq)
+    file_handle_out.write(id_seq) #id_seq[i]
     file_handle_out.write('\n')
-    file_handle_out.write(seq)
+    file_handle_out.write(seq) #seq[i]
     file_handle_out.write('\n')
-    file_handle_out.write(decoded)
+    file_handle_out.write(decoded) 
 
 file_handle.close()
 file_handle_out.close()
