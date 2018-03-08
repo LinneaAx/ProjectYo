@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+import sys
+import os
 import parse_code
 import train_my_model
 import predict_with_my_model
