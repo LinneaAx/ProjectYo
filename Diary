@@ -46,3 +46,5 @@ Reoganized my files, remember to add new file directories in the humble files.
 #entry 8/3 SHould have a humble_python_predict that works, havent run it enough to know for sure.
 Should edit so it takes multiple sequences for prediction, if I have time.
 ran training on windowsizes 41 to 49. still increase in cross_val_score, very suspicious 
+
+#entry 9/3 dear Diary, I now have a working predictor that makes multiple input sequences!! I have changed code in parse_code, make sure the training humble python works still...
