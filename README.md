@@ -1,9 +1,15 @@
 # ProjectYo
 Development of a SVM predictor of membrane proteins, classifying globular, helical, inside and outside loop residues.
 
+
+#TO RUN THE OPTIMIZED PREDICTOR!!!
+ - In scripts, run predict.py as main. Will take multiple input sequences. 
+
 /scripts - various scripts used to parse input, train and save models, predict using models
 
 /data - data files used to train the models, output files 
+
+/testdata - handy files for testing 
 
 /generated models - models using different windowsizes, default setting for LinearSVC. 
 
