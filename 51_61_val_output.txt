@@ -1,0 +1,6 @@
+51alpha_beta_globular_sp_4state.txt_split0.773216808879
+53alpha_beta_globular_sp_4state.txt_split0.775061974404
+55alpha_beta_globular_sp_4state.txt_split0.776633649066
+57alpha_beta_globular_sp_4state.txt_split0.778590528921
+59alpha_beta_globular_sp_4state.txt_split0.780435682278
+61alpha_beta_globular_sp_4state.txt_split0.781733857618
