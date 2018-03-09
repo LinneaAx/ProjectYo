@@ -53,26 +53,24 @@ def parsetop(file_input):
     return(topology)    
     
     
-def window(file_input, windowsize):
+def window(data_input, windowsize):
     ws = int(windowsize)
     n = int(ws/2)
    
-    protteseq = parseprot(file_input)
     windowz = []
-    for protseq in protteseq:
-        protseq = ((n)*'0')+protseq+((n)*'0')
-        for i in range(0, len(protseq)):
-            if i+(ws) > len(protseq):
-                break
-            temp = protseq[i:i+(ws)]
-            windowz.append(temp)
+    protseq = str(data_input)
+    protseq = ((n)*'0')+protseq+((n)*'0')
+    for i in range(0, len(protseq)):
+        if i+(ws) > len(protseq):
+            break
+        temp = protseq[i:i+(ws)]
+        windowz.append(temp)
     return(windowz)
     
 def aa_coder(file_input, windowsize, aa_dic=aa_dic):
     
     binary_word = []
-    windows = window(file_input, windowsize)
-    for elements in windows:
+    for elements in file_input:
         temp = []
         for characters in elements:
             binary = aa_dic[characters]

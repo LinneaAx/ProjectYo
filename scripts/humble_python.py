@@ -10,9 +10,10 @@ from sklearn.model_selection import cross_val_score
 
 
 def create_those_windows(input_data):
-    file_handle = open('51_61_val_output.txt', 'w')
-    for windowsize in range(51, 62, 2):
-        X, Y = parse_code.aa_top_coder(input_data, windowsize) #files saved in test
+    file_handle = open('test51_61_val_output.txt', 'w')
+    for windowsize in range(5, 7, 2):
+        X = parse_code.aa_coder(input_data, windowsize) #files saved in test
+        Y = parse_code.top_coder(input_data, windowsize)
         clf = LinearSVC()
         clf.fit(X, Y)
         
@@ -20,7 +21,7 @@ def create_those_windows(input_data):
         #params = clf.get_params() #prints out the parameters the model builds on, useful later?
         cross_score_average = np.average(cross_score)
     
-        joblib.dump(clf,str(windowsize)+'_'+input_data+'_model.pkl')
+        joblib.dump(clf,str(windowsize)+'_teest'+input_data+'_model.pkl')
         print('Model created of windowsize:', windowsize)
         file_handle.write(str(windowsize))
         file_handle.write(input_data) # why doesnt this work??
