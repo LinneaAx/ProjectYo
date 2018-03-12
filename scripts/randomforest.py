@@ -16,7 +16,7 @@ def vectors_savez(input_file):
     return(x, y)
 
 #use sklearn train_test_split to generate train test data split
-x, y = vectors_savez('../splitoutput/ws_3_alpha_beta_globular_sp_4state.txt_split_output.txt.npz')
+x, y = vectors_savez('../splitoutput/ws_35_alpha_beta_globular_sp_4state.txt_split_output.txt.npz')
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.10)
 
 #Training and testing the different classifyers LinearSVC, decisiontree and randomforest
@@ -73,5 +73,5 @@ f.close()
 
 
 if __name__ == '__main__':
-    vectors_savez('../splitoutput/ws_3_alpha_beta_globular_sp_4state.txt_split_output.txt.npz')
+    vectors_savez('../splitoutput/ws_35_alpha_beta_globular_sp_4state.txt_split_output.txt.npz')
     

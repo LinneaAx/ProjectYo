@@ -48,3 +48,6 @@ Should edit so it takes multiple sequences for prediction, if I have time.
 ran training on windowsizes 41 to 49. still increase in cross_val_score, very suspicious 
 
 #entry 9/3 dear Diary, I now have a working predictor that makes multiple input sequences!! I have changed code in parse_code, make sure the training humble python works still...
+
+#entry 12/3 I have to change from joblib dump to pickle. That is tomorrows task and also use PSSMs in the model. 
+Today I wrote a script, randomforest.py, that compares SVM, decision tree and random forest. My confusion matrix is turning out very weird. look into that!
