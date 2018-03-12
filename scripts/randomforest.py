@@ -17,35 +17,43 @@ def vectors_savez(input_file):
 
 #use sklearn train_test_split to generate train test data split
 x, y = vectors_savez('../splitoutput/ws_3_alpha_beta_globular_sp_4state.txt_split_output.txt.npz')
-
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.10)
 
 #Training and testing the different classifyers LinearSVC, decisiontree and randomforest
-#SVM classifier 
+#SVM classifier
+ 
 clf = LinearSVC()
 svm_cross_score = cross_val_score(clf, x, y, cv = 10, verbose=True)
+print('SVM cross validation done...')
 svm_cross_mean = svm_cross_score.mean()
 clf.fit(x_train, y_train)
+print('SVM training done...')
 svm_y_predicted = clf.predict(x_test)
 svm_classreport = classification_report(y_test, svm_y_predicted, labels = ['1', '2', '3', '4'])
 svm_confusionm = confusion_matrix(y_test, svm_y_predicted, labels = ['1', '2', '3', '4'])
 
 
 #decision tree classifier
+
 clf = DecisionTreeClassifier(max_depth=None, min_samples_split=2, random_state=0)
 tree_cross_score = cross_val_score(clf, x, y, cv = 10, verbose=True)
+print('Decision tree cross validation done...')
 tree_score_mean = tree_cross_score.mean()
 clf.fit(x_train, y_train)
+print('Decision tree training done...')
 tree_y_predicted = clf.predict(x_test)
 tree_classreport = classification_report(y_test, tree_y_predicted, labels = ['1', '2', '3', '4'])
 tree_confusionm = confusion_matrix(y_test, tree_y_predicted, labels = ['1', '2', '3', '4'])
 
 
 #randomforestclassifier
+
 clf = RandomForestClassifier(n_estimators=10, max_depth=None, min_samples_split=2, random_state=0)
 random_cross_score = cross_val_score(clf, x, y, cv = 10, verbose=True)
+print('Random forest cross validation done...')
 random_score_mean = random_cross_score.mean()
 clf.fit(x_train, y_train)
+print('Random forest training done...')
 random_y_predicted = clf.predict(x_test)
 random_classreport = classification_report(y_test, random_y_predicted, labels = ['1', '2', '3', '4'])
 random_confusionm = confusion_matrix(y_test, random_y_predicted, labels = ['1', '2', '3', '4'])
