@@ -51,3 +51,7 @@ ran training on windowsizes 41 to 49. still increase in cross_val_score, very su
 
 #entry 12/3 I have to change from joblib dump to pickle. That is tomorrows task and also use PSSMs in the model. 
 Today I wrote a script, randomforest.py, that compares SVM, decision tree and random forest. My confusion matrix is turning out very weird. look into that!
+
+#entry 13/3 Productive day! finished the script that compares svm, decision tree and random forest, tomorrow I will add plot function at the end of it. 
+Wrote a bash script to train models with different windowsize, output all kinds of metrics and save model using pickle instead of joblib. 
+When I know the best ws I will optimize params using a new gridsearchscript. Started working with Maria, great cooperation! 
