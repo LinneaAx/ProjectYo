@@ -30,8 +30,10 @@ tree_score_mean = tree_cross_score.mean()
 clf.fit(x_train, y_train)
 print('Decision tree training done...')
 tree_y_predicted = clf.predict(x_test)
-tree_classreport = classification_report(y_test, tree_y_predicted, labels = [1, 2, 3, 4])
-tree_confusionm = confusion_matrix(y_test, tree_y_predicted, labels = [1, 2, 3, 4])
+labels = [1, 2, 3, 4]
+target_names = ['G', 'M', 'I', 'O']
+tree_classreport = classification_report(y_test, tree_y_predicted, labels = labels, target_names = target_names)
+tree_confusionm = confusion_matrix(y_test, tree_y_predicted, labels = labels, target_names = target_names)
 tree_mcc = matthews_corrcoef(y_test, tree_y_predicted)
 
 #randomforestclassifier
@@ -44,8 +46,8 @@ clf.fit(x_train, y_train)
 print('Random forest training done...')
 
 random_y_predicted = clf.predict(x_test)
-random_classreport = classification_report(y_test, random_y_predicted, labels = [1, 2, 3, 4])
-random_confusionm = confusion_matrix(y_test, random_y_predicted, labels = [1, 2, 3, 4])
+random_classreport = classification_report(y_test, random_y_predicted, labels = labels, target_names = target_names)
+random_confusionm = confusion_matrix(y_test, random_y_predicted, labels = labels, target_names = target_names)
 random_mcc = matthews_corrcoef(y_test, random_y_predicted)
 
 #Training and testing the different classifiers LinearSVC, decisiontree and randomforest
@@ -59,8 +61,8 @@ clf.fit(x_train, y_train)
 print('SVM training done...')
 svm_y_predicted = clf.predict(x_test)
 print(svm_y_predicted)
-svm_classreport = classification_report(y_test, svm_y_predicted, labels = [1, 2, 3, 4])
-svm_confusionm = confusion_matrix(y_test, svm_y_predicted, labels = [1, 2, 3, 4])
+svm_classreport = classification_report(y_test, svm_y_predicted, labels = labels, target_names = target_names)
+svm_confusionm = confusion_matrix(y_test, svm_y_predicted, labels = labels, target_names = target_names)
 svm_mcc = matthews_corrcoef(y_test, svm_y_predicted)
 
 with open ('../outputfiles/results_svm_tree_random.txt', 'w') as f:
@@ -76,7 +78,7 @@ with open ('../outputfiles/results_svm_tree_random.txt', 'w') as f:
     f.write('Confusion matrix DecisionTreeClassifier: ' + '\n' + str(tree_confusionm) + '\n')
     f.write('Classification report RandomForestClassifier: ' + '\n' + str(random_classreport) + '\n')
     f.write('Confusion matrix RandomForestClassifier: ' + '\n' + str(random_confusionm) + '\n')
-f.close()
+    f.close()
 
 
 if __name__ == '__main__':
