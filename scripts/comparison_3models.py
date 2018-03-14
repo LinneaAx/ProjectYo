@@ -33,7 +33,7 @@ tree_y_predicted = clf.predict(x_test)
 labels = [1, 2, 3, 4]
 target_names = ['G', 'M', 'I', 'O']
 tree_classreport = classification_report(y_test, tree_y_predicted, labels = labels, target_names = target_names)
-tree_confusionm = confusion_matrix(y_test, tree_y_predicted, labels = labels, target_names = target_names)
+tree_confusionm = confusion_matrix(y_test, tree_y_predicted, labels = labels)
 tree_mcc = matthews_corrcoef(y_test, tree_y_predicted)
 
 #randomforestclassifier
@@ -47,7 +47,7 @@ print('Random forest training done...')
 
 random_y_predicted = clf.predict(x_test)
 random_classreport = classification_report(y_test, random_y_predicted, labels = labels, target_names = target_names)
-random_confusionm = confusion_matrix(y_test, random_y_predicted, labels = labels, target_names = target_names)
+random_confusionm = confusion_matrix(y_test, random_y_predicted, labels = labels)
 random_mcc = matthews_corrcoef(y_test, random_y_predicted)
 
 #Training and testing the different classifiers LinearSVC, decisiontree and randomforest
@@ -62,7 +62,7 @@ print('SVM training done...')
 svm_y_predicted = clf.predict(x_test)
 print(svm_y_predicted)
 svm_classreport = classification_report(y_test, svm_y_predicted, labels = labels, target_names = target_names)
-svm_confusionm = confusion_matrix(y_test, svm_y_predicted, labels = labels, target_names = target_names)
+svm_confusionm = confusion_matrix(y_test, svm_y_predicted, labels = labels)
 svm_mcc = matthews_corrcoef(y_test, svm_y_predicted)
 
 with open ('../outputfiles/results_svm_tree_random.txt', 'w') as f:

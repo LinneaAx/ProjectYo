@@ -30,18 +30,19 @@ def train_model(input_file):
     labels = [1, 2, 3, 4]
     target_names = ['G', 'M', 'I', 'O']
     svm_classreport = classification_report(y_test, svm_y_predicted, labels = labels, target_names = target_names)
-    svm_confusionm = confusion_matrix(y_test, svm_y_predicted, labels = labels, target_names = target_names)
+    svm_confusionm = confusion_matrix(y_test, svm_y_predicted, labels = labels)
     svm_mcc = matthews_corrcoef(y_test, svm_y_predicted)
     
-    params = clf.get_params()
+    #params = clf.get_params()
     
-    with open ('../generatedmodels/pickle/'+input_file+'.model.pkl', 'wb') as q:
-        pickle.dumps(clf, q)
+    
+    with open ('../generated_models/pickle/' + str(input_file) + '.model.pkl', 'wb') as q:
+        pickle.dump(clf, q)
     
     with open ('../outputfiles/ws_optimization_results.txt', 'a') as f:
-        f.write(input_file + ' ') 
-        f.write(str(params) + ' ')
-        f.write('Cross-validation scores for LinearSVC: ' + str(cross_score_average) + '\n')
+        f.write(input_file + '\n') 
+        #f.write(str(params) + ' ')
+        f.write('Cross-validation scores for LinearSVC: ' + str(svm_cross_mean) + '\n')
         f.write('Matthews correlation coefficient (MCC) SVM: ' + str(svm_mcc) + '\n')
         f.write('Classification report SVM: ' + '\n' + str(svm_classreport) + '\n')
         f.write('Confusion matrix SVM: ' + '\n' + str(svm_confusionm) + '\n')
