@@ -55,6 +55,7 @@ def train_model(input_file):
 if __name__ == '__main__':
     input_file = sys.argv[1]
     train_model(input_file)
+    
     #train_model('ws_3_alpha_beta_globular_sp_4state.txt_split_output.txt.npz')
     
 
