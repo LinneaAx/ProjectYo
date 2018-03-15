@@ -55,3 +55,8 @@ Today I wrote a script, randomforest.py, that compares SVM, decision tree and ra
 #entry 13/3 Productive day! finished the script that compares svm, decision tree and random forest, tomorrow I will add plot function at the end of it. 
 Wrote a bash script to train models with different windowsize, output all kinds of metrics and save model using pickle instead of joblib. 
 When I know the best ws I will optimize params using a new gridsearchscript. Started working with Maria, great cooperation! 
+
+#entry 15/3 Good day, tested more ws, MCC still increasing tho.. Decided to go with ws 59 since after that the MCC stagnates. 
+I have also fixed code for plotting ws vs MCC, the confusion matrice, validation score for param optimization and training curve.
+Now starting optimizing params, testing a lot of c scores and also the comparison of the 3 models using my best ws. 
+
