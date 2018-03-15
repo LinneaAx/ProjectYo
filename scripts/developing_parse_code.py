@@ -53,7 +53,7 @@ def parsetop(file_input):
     return(topology)    
     
     
-def window(data_input, windowsize):
+def window(datainput, windowsize):
     ws = int(windowsize)
     n = int(ws/2)
    
@@ -72,7 +72,9 @@ def aa_coder(file_input, windowsize, aa_dic=aa_dic):
     binary_word = []
     for elements in file_input:
         temp = []
+        print(elements)
         for characters in elements:
+            print(characters)
             binary = aa_dic[characters]
             temp.extend(binary)
         #temp = [characters for elements in temp for characters in elements]
@@ -104,8 +106,8 @@ def decoder(sequence, dictionary=top_top_dic):
     
     
 if __name__ == '__main__':
-
-    aa_top_coder('alpha_beta_globular_sp_4state.txt_split', '3', aa_dic, top_dic)
+    
+    top_coder('../data/alpha_beta_globular_sp_4state_mini.txt', '3', top_dic)
     #input_file = sys.argv[1]
     
     #if len(sys.argv) > 2:

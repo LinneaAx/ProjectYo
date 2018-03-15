@@ -18,13 +18,13 @@ def vectors_savez(input_file):
     return(x, y)
 
 #use sklearn train_test_split to generate train test data split
-x, y = vectors_savez('../splitoutput/ws_35_alpha_beta_globular_sp_4state.txt_split_output.txt.npz')
+x, y = vectors_savez('../splitoutput/ws_59_alpha_beta_globular_sp_4state.txt_split_output.txt.npz')
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.30)
 
 #decision tree classifier
 
-clf = DecisionTreeClassifier(max_depth=None, min_samples_split=2, random_state=0)
-tree_cross_score = cross_val_score(clf, x, y, cv = 10, verbose=True)
+clf = DecisionTreeClassifier()
+tree_cross_score = cross_val_score(clf, x_train, y_train, cv = 10, verbose=True)
 print('Decision tree cross validation done...')
 tree_score_mean = tree_cross_score.mean()
 clf.fit(x_train, y_train)
@@ -38,8 +38,8 @@ tree_mcc = matthews_corrcoef(y_test, tree_y_predicted)
 
 #randomforestclassifier
 
-clf = RandomForestClassifier(n_estimators=10, max_depth=None, min_samples_split=2, random_state=0)
-random_cross_score = cross_val_score(clf, x, y, cv = 10, verbose=True)
+clf = RandomForestClassifier()
+random_cross_score = cross_val_score(clf, x_train, y_train, cv = 10, verbose=True)
 print('Random forest cross validation done...')
 random_score_mean = random_cross_score.mean()
 clf.fit(x_train, y_train)
@@ -54,7 +54,7 @@ random_mcc = matthews_corrcoef(y_test, random_y_predicted)
 #SVM classifier
  
 clf = LinearSVC()
-svm_cross_score = cross_val_score(clf, x, y, cv = 10, verbose=True)
+svm_cross_score = cross_val_score(clf, x_train, y_train, cv = 10, verbose=True)
 print('SVM cross validation done...')
 svm_cross_mean = svm_cross_score.mean()
 clf.fit(x_train, y_train)
@@ -82,5 +82,5 @@ with open ('../outputfiles/results_svm_tree_random.txt', 'w') as f:
 
 
 if __name__ == '__main__':
-    vectors_savez('../splitoutput/ws_35_alpha_beta_globular_sp_4state.txt_split_output.txt.npz')
+    vectors_savez('../splitoutput/ws_59_alpha_beta_globular_sp_4state.txt_split_output.txt.npz')
     

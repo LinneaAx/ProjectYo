@@ -376,3 +376,166 @@ Confusion matrix SVM:
  [  904  8649   346   269]
  [ 8002  1108  2505   357]
  [ 3793  1760   768  1258]]
+ 
+ws_45_alpha_beta_globular_sp_4state.txt_split_output.txt.npz
+Cross-validation scores for LinearSVC: 0.765924749076
+Matthews correlation coefficient (MCC) SVM: 0.5631842637
+Classification report SVM: 
+             precision    recall  f1-score   support
+
+          G       0.79      0.98      0.87     47955
+          M       0.72      0.85      0.78     10261
+          I       0.63      0.22      0.33     12113
+          O       0.66      0.19      0.29      7550
+
+avg / total       0.74      0.77      0.72     77879
+
+Confusion matrix SVM: 
+[[46930   476   506    43]
+ [  908  8694   374   285]
+ [ 7890  1120  2690   413]
+ [ 3687  1726   719  1418]]
+ws_47_alpha_beta_globular_sp_4state.txt_split_output.txt.npz
+Cross-validation scores for LinearSVC: 0.768917848725
+Matthews correlation coefficient (MCC) SVM: 0.567551119853
+Classification report SVM: 
+             precision    recall  f1-score   support
+
+          G       0.79      0.98      0.88     48048
+          M       0.72      0.85      0.78     10125
+          I       0.63      0.24      0.34     12119
+          O       0.66      0.19      0.30      7587
+
+avg / total       0.75      0.77      0.72     77879
+
+Confusion matrix SVM: 
+[[46993   503   494    58]
+ [  869  8633   373   250]
+ [ 7701  1140  2848   430]
+ [ 3604  1749   782  1452]]
+ws_49_alpha_beta_globular_sp_4state.txt_split_output.txt.npz
+Cross-validation scores for LinearSVC: 0.770890131855
+Matthews correlation coefficient (MCC) SVM: 0.570953189952
+Classification report SVM: 
+             precision    recall  f1-score   support
+
+          G       0.80      0.98      0.88     47925
+          M       0.73      0.85      0.78     10314
+          I       0.62      0.24      0.35     12104
+          O       0.67      0.19      0.30      7536
+
+avg / total       0.75      0.77      0.73     77879
+
+Confusion matrix SVM: 
+[[46887   477   513    48]
+ [  914  8717   398   285]
+ [ 7714  1060  2957   373]
+ [ 3428  1757   893  1458]]
+ws_51_alpha_beta_globular_sp_4state.txt_split_output.txt.npz
+Cross-validation scores for LinearSVC: 0.773205253084
+Matthews correlation coefficient (MCC) SVM: 0.57619913171
+Classification report SVM: 
+             precision    recall  f1-score   support
+
+          G       0.80      0.98      0.88     47975
+          M       0.72      0.85      0.78     10157
+          I       0.63      0.25      0.36     12065
+          O       0.69      0.20      0.31      7682
+
+avg / total       0.75      0.77      0.73     77879
+
+Confusion matrix SVM: 
+[[46936   536   461    42]
+ [  823  8640   414   280]
+ [ 7467  1141  3073   384]
+ [ 3477  1743   895  1567]]
+ws_53_alpha_beta_globular_sp_4state.txt_split_output.txt.npz
+Cross-validation scores for LinearSVC: 0.77506582693
+Matthews correlation coefficient (MCC) SVM: 0.583307615356
+Classification report SVM: 
+             precision    recall  f1-score   support
+
+          G       0.80      0.98      0.88     47982
+          M       0.73      0.85      0.79     10306
+          I       0.63      0.26      0.37     12021
+          O       0.67      0.21      0.32      7570
+
+avg / total       0.75      0.78      0.74     77879
+
+Confusion matrix SVM: 
+[[47006   434   510    32]
+ [  855  8739   411   301]
+ [ 7326  1065  3185   445]
+ [ 3374  1704   912  1580]]
+ws_55_alpha_beta_globular_sp_4state.txt_split_output.txt.npz
+Cross-validation scores for LinearSVC: 0.776645205603
+Matthews correlation coefficient (MCC) SVM: 0.583212355806
+Classification report SVM: 
+             precision    recall  f1-score   support
+
+          G       0.81      0.98      0.88     48129
+          M       0.72      0.84      0.78     10114
+          I       0.64      0.27      0.38     12120
+          O       0.67      0.22      0.33      7516
+
+avg / total       0.76      0.78      0.74     77879
+
+Confusion matrix SVM: 
+[[47082   497   492    58]
+ [  851  8534   413   316]
+ [ 7258  1097  3318   447]
+ [ 3274  1682   930  1630]]
+ws_57_alpha_beta_globular_sp_4state.txt_split_output.txt.npz
+Cross-validation scores for LinearSVC: 0.778598232785
+Matthews correlation coefficient (MCC) SVM: 0.589028429096
+Classification report SVM: 
+             precision    recall  f1-score   support
+
+          G       0.81      0.98      0.89     48217
+          M       0.73      0.85      0.78     10098
+          I       0.65      0.28      0.39     12023
+          O       0.68      0.22      0.33      7541
+
+avg / total       0.76      0.78      0.74     77879
+
+Confusion matrix SVM: 
+[[47259   445   473    40]
+ [  814  8571   414   299]
+ [ 7173  1080  3336   434]
+ [ 3253  1721   913  1654]]
+ws_59_alpha_beta_globular_sp_4state.txt_split_output.txt.npz
+Cross-validation scores for LinearSVC: 0.780401012815
+Matthews correlation coefficient (MCC) SVM: 0.59156703103
+Classification report SVM: 
+             precision    recall  f1-score   support
+
+          G       0.81      0.98      0.89     48014
+          M       0.73      0.85      0.78     10264
+          I       0.65      0.28      0.39     12058
+          O       0.67      0.21      0.33      7543
+
+avg / total       0.76      0.78      0.74     77879
+
+Confusion matrix SVM: 
+[[47133   384   459    38]
+ [  808  8676   461   319]
+ [ 7095  1131  3408   424]
+ [ 3282  1709   933  1619]]
+ws_61_alpha_beta_globular_sp_4state.txt_split_output.txt.npz
+Cross-validation scores for LinearSVC: 0.781776229609
+Matthews correlation coefficient (MCC) SVM: 0.592437263771
+Classification report SVM: 
+             precision    recall  f1-score   support
+
+          G       0.81      0.98      0.89     48112
+          M       0.73      0.85      0.78     10119
+          I       0.64      0.29      0.40     12062
+          O       0.69      0.22      0.33      7586
+
+avg / total       0.76      0.78      0.74     77879
+
+Confusion matrix SVM: 
+[[47168   389   511    44]
+ [  795  8588   424   312]
+ [ 7051  1143  3475   393]
+ [ 3207  1690  1014  1675]]
