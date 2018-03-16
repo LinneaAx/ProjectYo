@@ -31,10 +31,10 @@ def predict(pssm_file):
     string_result = ''.join(results_decode)
     
     with open('../pssm_svm_predictions.txt', 'a') as f:
-        f.write(pssm_file[:-11] + '\n')
+        f.write(pssm_file[9:-6] + '\n')
         f.write(string_result + '\n')
         f.close()
-    print(pssm_file[:-11])    
+    print(pssm_file[9:-6])    
     print(string_result)
     
 if __name__ == '__main__':

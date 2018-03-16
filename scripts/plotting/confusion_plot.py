@@ -1,7 +1,5 @@
-import itertools
-from sklearn import svm
-import matplotlib.pyplot as plt
-import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix
 
 def plot_confusion_matrix(cm, classes,
                           normalize=False,
@@ -36,4 +34,4 @@ def plot_confusion_matrix(cm, classes,
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
-
+    
