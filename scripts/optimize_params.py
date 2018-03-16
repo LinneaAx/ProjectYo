@@ -44,7 +44,6 @@ def valid_curve(input_file):
     plt.title("Validation Curve with SVM")
     plt.xlabel("$\C$")
     plt.ylabel("Score")
-    plt.ylim(0.0, 1.1)
     lw = 2
     plt.semilogx(param_range, train_scores_mean, label="Training score",
                  color="darkorange", lw=lw)
@@ -58,7 +57,7 @@ def valid_curve(input_file):
                      color="navy", lw=lw)
     plt.legend(loc="best")
     plt.show()
-    
+    plt.savefig('figure.png')
     
     
 if __name__ == '__main__':
