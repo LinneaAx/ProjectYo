@@ -16,7 +16,7 @@ def extract_info(dataset):
     return(idlist, seqlist, topolist)
 
 
-def train_pssm(idlist, topolist, window):
+def change_pssm(idlist, topolist, window):
     '''Takes pssms from X_train and trains and saves model'''    
     
     pssm_list_train = []    
@@ -34,6 +34,9 @@ def train_pssm(idlist, topolist, window):
         for topologies in proteins:
             y = top_dic[topologies]
             Y_train_changed.append(y)
+    return(X_train_changed, Y_train_changed)
+
+def train_pssm(X_train_changed, Y_train_changed):
     clf = LinearSVC()
     clf.fit(X_train_changed, Y_train_changed)
     filename = 'pssm_model.sav'
@@ -57,6 +60,6 @@ def extract_pssms(pssm_list, window):
     return np.vstack(arrays), numbering
             
            
-if __name__ == '__main__':  
+if __name__ == '__main__':
     idlist, seqlist, topolist = extract_info('../../data/pssm_data.txt_split')
-    train_pssm(idlist, topolist, 3) #called with window size 3
+    X_train_changed, Y_train_changed = change_pssm(idlist, topolist, 3) #called with window size 3
