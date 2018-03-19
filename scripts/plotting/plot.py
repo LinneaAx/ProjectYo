@@ -1,8 +1,9 @@
-import numpy as np
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-
+import numpy as np
 def plot(file_name):
-    with open ('../outputfiles/'+file_name, 'r') as q:
+    with open ('../../outputfiles/'+file_name, 'r') as q:
         data = q.read().splitlines()
         data = list(data)
     wstot = []
@@ -17,11 +18,10 @@ def plot(file_name):
     wstot = np.array(wstot)
     plt.xlabel('Windowsize')
     plt.ylabel('MCC')
-    plt.title('Comparison of MCC for different windowsizes')
+    plt.title('Comparison of MCC for different windowsizes using LinearSVC')
     
     plt.plot(wstot, scoretot)
-    plt.show()
-
+    plt.savefig('../../outputfiles/ws.png')
 
 
 plot('ws_mcc_results.txt')

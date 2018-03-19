@@ -53,7 +53,7 @@ def parsetop(file_input):
     return(topology)    
     
     
-def window(datainput, windowsize):
+def window(data_input, windowsize):
     ws = int(windowsize)
     n = int(ws/2)
    
@@ -72,9 +72,7 @@ def aa_coder(file_input, windowsize, aa_dic=aa_dic):
     binary_word = []
     for elements in file_input:
         temp = []
-        print(elements)
         for characters in elements:
-            print(characters)
             binary = aa_dic[characters]
             temp.extend(binary)
         #temp = [characters for elements in temp for characters in elements]

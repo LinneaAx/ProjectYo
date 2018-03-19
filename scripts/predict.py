@@ -13,7 +13,9 @@ from sklearn.model_selection import cross_val_score
 
 np.set_printoptions(threshold=np.nan)
 
-#take a fasta input file, create windows using window from parse_code, make if binary using aa-coder from parse_code, load model using predict with my model, make it back into topologies, print out id, seq, top as fasta + topology
+#take a 2 line fasta input file, create windows using window from parse_code, 
+#make if binary using aa-coder from parse_code, load model using predict with my model, 
+#make it back into topologies, print out id, seq, top as fasta + topology
 
 def input_predict(input_file, model):
     file_handle = open(input_file, 'r')
@@ -28,8 +30,8 @@ def input_predict(input_file, model):
     file_handle_out = open(seq_ids[0]+'prediction_result', 'w')
 
     for i in range(len(seq_ids)):
-        window = developing_parse_code.window(seq[i], 35)
-        binary_word = developing_parse_code.aa_coder(window, 35)
+        window = developing_parse_code.window(seq[i], 59)
+        binary_word = developing_parse_code.aa_coder(window, 59)
         
         clf = joblib.load(model)
         pred_result = []
@@ -50,4 +52,5 @@ if __name__ == '__main__':
     #input_fasta = sys.argv[1] # want to implement but it is mucking up the write file directories. 
     #if len(sys.argv) >2:
     #    model = sys.argv[2]
-    input_predict('../testdata/fasta.fasta', model='../generated_models/35_alpha_beta_globular_sp_4state.txt_split_model.pkl')
+    #input_predict('../testdata/fasta.fasta', model='../generated_models/59_alpha_beta_globular_sp_4state.txt_split_model.pkl')
+    input_predict('../data/proteins50.txt.fasta', model='../generated_models/59_alpha_beta_globular_sp_4state.txt_split_model.pkl')

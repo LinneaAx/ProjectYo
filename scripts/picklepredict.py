@@ -10,12 +10,13 @@ from sklearn.externals import joblib
 from sklearn.model_selection import KFold
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import cross_val_score
+import pickle
 
 np.set_printoptions(threshold=np.nan)
 
 #take a fasta input file, create windows using window from parse_code, make if binary using aa-coder from parse_code, load model using predict with my model, make it back into topologies, print out id, seq, top as fasta + topology
 
-def input_predict(input_file, model):
+def input_predict(input_file, model='../generated_models/pickle/ws_59_alpha_beta_globular_sp_4state.txt_split_output.txt.npz.model.pkl'):
     file_handle = open(input_file, 'r')
     
     seq_ids = []
@@ -26,12 +27,14 @@ def input_predict(input_file, model):
         else:
             seq.append(line.strip()) 
     file_handle_out = open(seq_ids[0]+'prediction_result', 'w')
-
-    for i in range(len(seq_ids)):
-        window = developing_parse_code.window(seq[i], 35)
-        binary_word = developing_parse_code.aa_coder(window, 35)
+    with open(model, 'rb') as pickle_file:
+        clf = pickle.load(pickle_file)
         
-        clf = pickle.loads(model)
+    for i in range(len(seq_ids)):
+        window = developing_parse_code.window(seq[i], 59)
+        binary_word = developing_parse_code.aa_coder(window, 59)
+        
+        
         pred_result = []
         pred_result = clf.predict(binary_word)
         decoded = developing_parse_code.decoder(pred_result)
@@ -50,4 +53,4 @@ if __name__ == '__main__':
     #input_fasta = sys.argv[1]
     #if len(sys.argv) >2:
     #    model = sys.argv[2]
-    input_predict('../testdata/fasta.fasta', model='../generated_models/35_alpha_beta_globular_sp_4state.txt_split_model.pkl')
+    input_predict('../testdata/fasta.fasta')

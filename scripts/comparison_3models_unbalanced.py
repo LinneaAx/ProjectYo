@@ -27,7 +27,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.30)
 
 #decision tree classifier
 
-clf = DecisionTreeClassifier(class_weight='balanced')
+clf = DecisionTreeClassifier()
 tree_cross_score = cross_val_score(clf, x_train, y_train, cv = 10, verbose=True)
 print('Decision tree cross validation done...')
 tree_score_mean = tree_cross_score.mean()
@@ -40,16 +40,19 @@ tree_classreport = classification_report(y_test, tree_y_predicted, labels = labe
 tree_confusionm = confusion_matrix(y_test, tree_y_predicted)
 tree_mcc = matthews_corrcoef(y_test, tree_y_predicted)
 
+
 plt.figure()
 confusion_plot.plot_confusion_matrix(tree_confusionm, classes=target_names, normalize=True,
                       title='Normalized confusion matrix')
-plt.savefig('../outputfiles/tree_confusion2.png')
-plt.tight_layout()
+plt.savefig('../outputfiles/tree_confusion_unbalanced2.png')
+plt.tight_layout
+()
 plt.close()
+
 
 #randomforestclassifier
 
-clf = RandomForestClassifier(class_weight='balanced')
+clf = RandomForestClassifier()
 random_cross_score = cross_val_score(clf, x_train, y_train, cv = 10, verbose=True)
 print('Random forest cross validation done...')
 random_score_mean = random_cross_score.mean()
@@ -64,13 +67,14 @@ random_mcc = matthews_corrcoef(y_test, random_y_predicted)
 plt.figure()
 confusion_plot.plot_confusion_matrix(random_confusionm, classes=target_names, normalize=True,
                       title='Normalized confusion matrix')
-plt.savefig('../outputfiles/random_confusion2.png')
+plt.savefig('../outputfiles/random_confusion_unbalanced2.png')
 plt.tight_layout()
 plt.close()
+
 #Training and testing the different classifiers LinearSVC, decisiontree and randomforest
 #SVM classifier
  
-clf = LinearSVC(class_weight='balanced')
+clf = LinearSVC()
 svm_cross_score = cross_val_score(clf, x_train, y_train, cv = 10, verbose=True)
 print('SVM cross validation done...')
 svm_cross_mean = svm_cross_score.mean()
@@ -81,14 +85,16 @@ print(svm_y_predicted)
 svm_classreport = classification_report(y_test, svm_y_predicted, labels = labels, target_names = target_names)
 svm_confusionm = confusion_matrix(y_test, svm_y_predicted)
 svm_mcc = matthews_corrcoef(y_test, svm_y_predicted)
+
 plt.figure()
 confusion_plot.plot_confusion_matrix(svm_confusionm, classes=target_names, normalize=True,
                       title='Normalized confusion matrix')
-plt.savefig('../outputfiles/svm_confusion2.png')
+plt.savefig('../outputfiles/svm_confusion_unbalanced2.png')
 plt.tight_layout()
 plt.close()
 
-with open ('../outputfiles/results_svm_tree_random_balanced2.txt', 'w') as f:
+
+with open ('../outputfiles/results_svm_tree_random_unbalanced2.txt', 'w') as f:
     f.write('Cross-validation scores for LinearSVC: ' + str(svm_cross_mean)+ '\n')
     f.write('Cross-validation scores for DecisionTreeClassifier: '+ str(tree_score_mean)+ '\n')
     f.write('Cross-validation scores for RandomForestClassifier: '+ str(random_score_mean)+ '\n')
