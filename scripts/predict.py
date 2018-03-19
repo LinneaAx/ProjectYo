@@ -52,5 +52,5 @@ if __name__ == '__main__':
     #input_fasta = sys.argv[1] # want to implement but it is mucking up the write file directories. 
     #if len(sys.argv) >2:
     #    model = sys.argv[2]
-    #input_predict('../testdata/fasta.fasta', model='../generated_models/59_alpha_beta_globular_sp_4state.txt_split_model.pkl')
-    input_predict('../data/proteins50.txt.fasta', model='../generated_models/59_alpha_beta_globular_sp_4state.txt_split_model.pkl')
+    input_predict('../testdata/fasta.fasta', model='../generated_models/59_alpha_beta_globular_sp_4state.txt_split_model.pkl')
+    #input_predict('../data/proteins50.txt.fasta', model='../generated_models/59_alpha_beta_globular_sp_4state.txt_split_model.pkl')

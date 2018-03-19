@@ -39,7 +39,7 @@ def train_model(input_file):
     with open ('../../generated_models/pickle' + str(input_file) + '.model.pkl', 'rb') as q:
         pickle.dump(clf, q)
     
-    with open ('../../outputfiles/poopws_optimization_results.txt', 'a') as f:
+    with open ('../../outputfiles/ws_optimization_results.txt', 'a') as f:
         f.write(input_file + '\n') 
         #f.write(str(params) + ' ')
         f.write('Cross-validation scores for LinearSVC: ' + str(svm_cross_mean) + '\n')
