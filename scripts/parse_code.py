@@ -90,8 +90,8 @@ def top_coder(file_input, windowsize, top_dic=top_dic):
         coded_label.extend(labelz)   
     coded_label = np.array(coded_label)
     
-    outfile ='ws_'+str(windowsize)+'_'+file_input+'_output.txt'
-    np.savez(os.path.join(BASE_PATH, outfile), x=aa_coder(file_input, windowsize), y=coded_label)
+    #outfile ='ws_'+str(windowsize)+'_'+file_input+'_output.txt'
+    np.savez('proteins50_data', x=aa_coder(file_input, windowsize), y=coded_label)
     print('coding done')
     return(coded_label)
 

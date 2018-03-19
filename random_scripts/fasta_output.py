@@ -1,8 +1,8 @@
-#Creates fasta file for PSI-Blast run, sequence name and sequence
+#Creates fasta file, sequence name and sequence
 
 import pandas as pan
 
-filehandle = 'alpha_beta_globular_sp_4state.txt_split'
+filehandle = '../data/proteins50.txt'
 
 raw_data = pan.read_csv(filehandle, header=None)
 drop_list = []
